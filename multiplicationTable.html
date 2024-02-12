@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #table {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Generate Multiplication Table</h2>
+    <input type="number" id="number" placeholder="Enter a number"><br>
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="table"></div>
+
+    <script>
+        function generateTable() {
+            // Get the number entered by the user
+            var number = parseInt(document.getElementById('number').value);
+
+            // Check if the input is valid
+            if (isNaN(number)) {
+                document.getElementById('table').innerHTML = 'Please enter a valid number';
+            } else {
+                var tableHTML = '<h3>Multiplication Table of ' + number + '</h3>';
+                tableHTML += '<table border="1" cellpadding="5"><tr><th>Multiplier</th><th>Result</th></tr>';
+
+                // Generate the multiplication table
+                for (var i = 1; i <= 10; i++) {
+                    var result = number * i;
+                    tableHTML += '<tr><td>' + number + ' x ' + i + '</td><td>' + result + '</td></tr>';
+                }
+
+                tableHTML += '</table>';
+                // Display the table
+                document.getElementById('table').innerHTML = tableHTML;
+            }
+        }
+    </script>
+</body>
+</html>

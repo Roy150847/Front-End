@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script>
+        function msg1() {
+            alert("hello, hope your are doing well!");
+        }
+        function msg2() {
+            alert("PKMKB");
+        }
+    </script>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        document.write("This is JavaScript.");
+        console.log("JavaScript.");
+        document.getElementById("demo").innerHTML="Hello JavaScript";         
+    </script>
+    <p id="demo1"></p>
+    <script>
+        document.getElementById("demo1").innerHTML="Hey JavaScript";
+    </script>
+
+    <input type="button" value="internal" onclick="msg1()">
+    <input type="button" value="external" onclick="msg2()">
+
+    <script>
+        alert("India.....India");
+    </script>
+
+    <br><br><br>
+    <input type="button" value="ClickMe" onclick="msg3()">
+
+    <script>
+        window.alert("ABCDEF");
+        // window.print();
+    </script>
+</body>
+</html>
