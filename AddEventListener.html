@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Events</title>
+    <style>
+        /* #myButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        } */
+        #startButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0fe413;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #stopButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e21515;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <button id="myButton">Click Me!</button> -->
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+    <p id="dateTime"></p>
+
+     <script>
+        // // Get the button element
+        // var button = document.getElementById('myButton');
+
+        // // Event to change background color
+        // button.addEventListener('click', function() {
+        //     // Generate a random color
+        //     // var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        //     button.style.backgroundColor = 'green';
+
+
+        //     // Event to change backgroud color of the page
+        //     document.body.style.backgroundColor = 'beige';
+        // });
+
+        // // Event to display "You clicked the button"
+        // button.addEventListener('click', function() {
+        //     // alert('You clicked the button');
+
+        //     // Event will be displayed 5 seconds later
+        //     setTimeout(function() {
+        //         alert('You clicked the button 5 seconds ago');
+        //     },5000);
+        // });
+
+        // button.addEventListener('mouseover', function() {
+        //     button.style.backgroundColor = 'red';
+        // });
+
+        // button.addEventListener('mouseout', function() {
+        //     button.style.backgroundColor = '';
+        // });
+        // Variables to hold the interval and current date/time
+        var intervalId;
+        var dateTimeParagraph = document.getElementById('dateTime');
+
+        // Function to start the clock
+        function startClock() {
+            // Update the clock every second
+            intervalId = setInterval(updateClock, 1000);
+        }
+
+        // Function to update the clock
+        function updateClock() {
+            var currentDate = new Date();
+            var formattedDate = currentDate.toLocaleDateString();
+            var formattedTime = currentDate.toLocaleTimeString();
+            var dateTimeString = 'Current Date and Time: ' + formattedDate + ' ' + formattedTime;
+            dateTimeParagraph.textContent = dateTimeString;
+        }
+
+        // Function to stop the clock
+        function stopClock() {
+            clearInterval(intervalId);
+        }
+
+        // Get the start and stop buttons and attach event listeners
+        var startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', startClock);
+
+        var stopButton = document.getElementById('stopButton');
+        stopButton.addEventListener('click', stopClock);
+
+
+
+
+    </script>
+</body>
+</html>
