@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <p id="p1">?????? ?????????????</p>
+    <p id="p2">@@@@@@@</p>
+    <p id="p3">%%%%%%%</p>
+    <button id="b1">TEXT</button>
+    <button id="b2">HTML</button>
+    <button id="b3">HTML</button>
+
+    <script>
+        // document.getElementById("p1").style.color="green";
+        // document.getElementById("p1").style.fontSize="100px";
+
+        // $("p").css("font-size","30px");
+        // $("p").css("color","green");
+
+        $("#b1").on("click",function(){
+            $(p1).text("Lovely Professional University");
+        })
+
+        $("#b2").on("click",function(){
+            $(p2).html("<i>India</i>");
+        })
+
+        // $("#b3").on("click",function(){
+        //     $(p3).text("jQuery");
+        // })
+
+         $("#b3").on("click",function(){
+            $(p3).html("<img src='C:\Users\roys9\OneDrive\Documents\Desktop\Front-End\assets\Timothee-Chalamet-2021.webp' height='100' width='100'>");
+        })
+
+    </script>
+</body>
+</html>
