@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        
+        const person = {
+            "name":"Ravi",
+            "age":20,
+            "city":"Bhagalpur",
+            "email":"Raviroy@gmail.com",
+            "isEmploye":false,
+            "language":["English","Hindi"],
+            "address":{
+                "street":"Zero Mile",
+                "city":"Bhagalpur",
+                "Zipcoode":"813210"
+            }
+        }
+        const person3 = '{"name":"Prateek","age":20,"city":"Giridih","email":"PrateekRoy@gmail.com","isEmploye":false,"language":["English","Hindi"],"address":{"street":"Zero Mile","city":"Giridih","Zipcode":"815316"}}';
+        var person1 = JSON.stringify(person);
+        document.getElementById("demo").innerHTML = person1;
+        var Person2 = JSON.parse(person3);
+        document.getElementById("demo").innerHTML =  
+                "Name: " + Person2.name + "<br>" +
+                "Age: " + Person2.age + "<br>" +
+                "City: " + Person2.city + "<br>" +
+                "Email: " + Person2.email + "<br>" +
+                "Is Employee: " + Person2.isEmploye + "<br>" +
+                "Languages: " + Person2.language.join(", ") + "<br>" +
+                "Street: " + Person2.address.street + "<br>" +
+                "City: " + Person2.address.city + "<br>" +
+                "Zipcode: " + Person2.address.Zipcode;
+        
+    </script>
+</body>
+</html>
